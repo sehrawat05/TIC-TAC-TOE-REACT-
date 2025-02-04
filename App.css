@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.square:hover {
+  background-color: #f0f0f0;
+}
+
+/* Remove right border from last column */
+.board-row .square:nth-child(3),
+.board-row .square:nth-child(6),
+.board-row .square:nth-child(9) {
+  border-right: none;
+}
+
+/* Remove bottom border from last row */
+.board-row:nth-child(3) .square {
+  border-bottom: none;
+}
